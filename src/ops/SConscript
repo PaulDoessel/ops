@@ -1,0 +1,13 @@
+
+Import('env')
+
+lib_src = [
+			'pedestrian.cpp',
+			'steer_world.cpp'
+			]
+lib_target = 'ops'
+
+env.Append(CPPPATH = ['/home/jaideep/opensteer/include'])
+env.Append(CCFLAGS='-fPIC')
+
+lib = env.StaticLibrary(source = lib_src , target = lib_target)
